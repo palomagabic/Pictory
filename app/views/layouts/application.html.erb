@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Authscratch</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if logged? %>
+     Bienvenido <%= current_user.email %>
+     <%= link_to "salir", session_path(current_user), method: :delete %>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>
