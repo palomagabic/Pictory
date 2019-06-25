@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :histories
-  resources :posts
-  root 'posts#index'
+  root 'users/new#index'
   get 'users/sign_up', to: "users#new"
   post 'users', to: "users#create"
   get 'users/sign_in', to: 'sessions#new'
